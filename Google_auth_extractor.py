@@ -36,6 +36,13 @@ try:
 except ImportError:
     MSS_OK = False
 
+try:
+    import cv2
+    import numpy as np
+    CV2_OK = True
+except ImportError:
+    CV2_OK = False
+
 
 # ── Tema ───────────────────────────────────────────────────────────────────────
 ctk.set_appearance_mode("dark")
@@ -328,11 +335,36 @@ def decode_migration_url(url):
     decoded = base64.b64decode(b64 + "=" * ((4 - len(b64) % 4) % 4))
     return _parse_protobuf(decoded)
 
+def _qr_decode_pil(img):
+    if not ZBAR_OK:
+        return None
+    try:
+        codes = zbar_decode(img.convert("RGB"))
+        return codes[0].data.decode("utf-8") if codes else None
+    except Exception:
+        return None
+
+def _qr_decode_cv2(img):
+    if not CV2_OK:
+        return None
+    try:
+        arr = np.array(img.convert("RGB"))
+        bgr = cv2.cvtColor(arr, cv2.COLOR_RGB2BGR)
+        detector = cv2.QRCodeDetector()
+        data, _, _ = detector.detectAndDecode(bgr)
+        return data if data else None
+    except Exception:
+        return None
+
 def decode_from_pil(img):
-    if not ZBAR_OK: raise RuntimeError("pip install pyzbar")
-    codes = zbar_decode(img.convert("RGB"))
-    if not codes: raise ValueError(t("err_no_qr"))
-    return decode_migration_url(codes[0].data.decode("utf-8"))
+    if not ZBAR_OK and not CV2_OK:
+        raise RuntimeError(
+            "pip install opencv-python\n"
+            "(or: pip install pyzbar)")
+    url = _qr_decode_pil(img) or _qr_decode_cv2(img)
+    if not url:
+        raise ValueError(t("err_no_qr"))
+    return decode_migration_url(url)
 
 def decode_qr_file(path):
     if not PIL_OK: raise RuntimeError("pip install Pillow")
