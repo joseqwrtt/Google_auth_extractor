@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Google Authenticator → Ente Auth / Aegis / 2FAS / CSV
+Google Authenticator → TXT / Aegis / 2FAS / CSV
 Idiomas: Español / English
 """
 
@@ -410,7 +410,7 @@ def export_csv(accounts, path):
                         "type":"TOTP","algorithm":"SHA1","digits":6,"period":30,"totp_uri":uri})
 
 EXPORTERS = [
-    {"label":"Ente Auth",  "ext":".txt",  "fn":export_ente,  "color":ACCENT,  "default":"ente_auth_import.txt",  "ft":[("TXT","*.txt")]},
+    {"label":"TXT",  "ext":".txt",  "fn":export_ente,  "color":ACCENT,  "default":"ente_auth_import.txt",  "ft":[("TXT","*.txt")]},
     {"label":"Aegis",      "ext":".json", "fn":export_aegis, "color":SUCCESS, "default":"aegis_import.json",     "ft":[("JSON","*.json")]},
     {"label":"2FAS",       "ext":".2fas", "fn":export_2fas,  "color":WARN,    "default":"2fas_import.2fas",      "ft":[("2FAS","*.2fas"),("JSON","*.json")]},
     {"label":"CSV",        "ext":".csv",  "fn":export_csv,   "color":ACCENT2, "default":"totp_import.csv",       "ft":[("CSV","*.csv")]},
