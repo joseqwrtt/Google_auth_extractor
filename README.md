@@ -54,7 +54,7 @@ Google Authenticator exports accounts in a proprietary format (`otpauth-migratio
 ### Instalación / Installation
 
 ```bash
-git clone https://github.com/TU_USUARIO/google-auth-extractor.git
+git clone https://github.com/joseqwrtt/Google_auth_extractor.git
 cd google-auth-extractor
 pip install customtkinter pillow pyzbar mss
 ```
