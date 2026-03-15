@@ -1,7 +1,7 @@
 # Google Auth Extractor
 
-> Exporta tus cuentas TOTP de Google Authenticator a Ente Auth, Aegis, 2FAS o CSV.  
-> Export your Google Authenticator TOTP accounts to Ente Auth, Aegis, 2FAS or CSV.
+> Exporta tus cuentas TOTP de Google Authenticator a TXT, Aegis, 2FAS o CSV.  
+> Export your Google Authenticator TOTP accounts to TXT, Aegis, 2FAS or CSV.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
@@ -29,7 +29,7 @@ Google Authenticator exports accounts in a proprietary format (`otpauth-migratio
 | 📋 | Copiar Emisor, Nombre o Clave individualmente / Copy Issuer, Name or Secret individually |
 | 🌐 | Interfaz en Español e Inglés / Spanish and English UI |
 | 🗑️ | Borrar lista para empezar de cero / Clear list to start over |
-| 💾 | Exportar a 4 formatos / Export to 4 formats: Ente Auth, Aegis, 2FAS, CSV |
+| 💾 | Exportar a 4 formatos / Export to 4 formats: TXT, Aegis, 2FAS, CSV |
 | 🔒 | 100% local — ningún dato sale del equipo / No data leaves your device |
 
 ---
@@ -128,7 +128,7 @@ Una vez con todas las cuentas en el listado, pulsa el botón del formato que nec
 
 | Botón | Archivo | Compatible con |
 |---|---|---|
-| **Ente Auth** | `.txt` | Ente Auth → Importar → Desde archivo |
+| **TXT** | `.txt` | TXT → Importar → Desde archivo |
 | **Aegis** | `.json` | Aegis Authenticator (Android) |
 | **2FAS** | `.2fas` | 2FAS (Android / iOS) |
 | **CSV** | `.csv` | Bitwarden, 1Password, Raivo y otros |
