@@ -188,6 +188,17 @@ C:\Python311\python.exe Google_auth_extractor.py
 [https://github.com/joseqwrtt/Google_auth_extractor](https://github.com/joseqwrtt/Google_auth_extractor)
 
 ---
+<img width="649" height="724" alt="screenshot2" src="https://github.com/user-attachments/assets/e63a4706-ab28-47d3-afc5-46f7588e0abd" />
+
+<img width="641" height="716" alt="screenshot3" src="https://github.com/user-attachments/assets/de41a90e-1467-419a-92b6-a1d0875ce1c9" />
+
+<img width="658" height="727" alt="screenshot4_enEN" src="https://github.com/user-attachments/assets/fb567a63-b989-4eeb-9341-5e3c7e7cd18c" />
+
+<img width="652" height="714" alt="screenshot4" src="https://github.com/user-attachments/assets/bb2bddfd-4c36-41a4-885a-894e54b40718" />
+
+<img width="720" height="425" alt="screenshot1" src="https://github.com/user-attachments/assets/3bc9b0b4-905a-4cd7-8941-36421c4a6b75" />
+
+---
 
 ## Licencia / License
 
